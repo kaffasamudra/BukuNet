@@ -51,28 +51,21 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="<?= base_url("dashboard") ?>" class="nav-item nav-link active">Home</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">To Do List</a>
-                        <a href="<?= base_url("tiketing") ?>" class="nav-item nav-link">Tiketing</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                            <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Program</a></li>
-                            </ul>
-                        </div>
+                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Pinjam Buku</a>
                         <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
                     <div class="d-none d-lg-block">
-                        <?php if ($this->session->userdata('username')): ?>
+                        <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
                             <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
                                 <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
-                                <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
-                                <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
+                                <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
+                                <h5 class="card-title">(<?php echo $this->session->userdata('email'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
-                                <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
+                                <a href="<?= base_url('user/users/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
                             <?php endforeach; ?>
@@ -93,7 +86,7 @@
                                     <div class="row">
                                         <div class="col-md-7 col-lg-6">
                                             <div class="detail-box">
-                                                <h1 class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1s;">To Do List</h1>
+                                                <h1 class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1s;">Perpustakaan</h1>
                                                 <p class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1.2s;">
                                                     Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.
                                                 </p>
@@ -170,7 +163,7 @@
         <div class="container  py-5">
             <div class="text-center mx-auto pb-5 animate__animated" data-animation="animate__slideInDown" style="max-width: 800px;">
                 <h4 class="text-uppercase text-info">Home</h4>
-                <h1 class="display-3 text-capitalize mb-3">PT BPR Bank Bantul</h1>
+                <h1 class="display-3 text-capitalize mb-3">Perpustakaan Widya Mandala</h1>
             </div>
             <div class="row gx-0 gy-4 align-items-center">
                 <div class="col-lg-6 col-xl-4">

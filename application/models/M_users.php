@@ -1,5 +1,6 @@
 <?php
-class M_users extends CI_Model {
+class M_users extends CI_Model
+{
 	function get_user($email,$password) {
 		$where = array(
 			'email' => $email,
@@ -13,5 +14,11 @@ class M_users extends CI_Model {
 	}
 	public function insert_user($data) {
         return $this->db->insert('users', $data);
+    }
+
+    public function get_users() {
+        $id=$this->session->userdata("id_user");
+        $this->db->where("id",$id);
+        return $this->db->get('users')->result();
     }
 }
