@@ -84,26 +84,34 @@
 
 <body>
     <div class="login-dark">
-        <?php echo form_open('userlogin'); ?>
-            <div class="illustration">
-                <!-- Gunakan <img> untuk menampilkan gambar -->
-                <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="email" id="email" placeholder="email" required>
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
-            </div>
-            <input class="btn btn-primary btn-block" type="submit" value="Login">
-            <a href="<?= base_url('forgotpassword') ?>" class="forgot">Forgot your password?</a>
-            <?php if ($this->session->flashdata('error')): ?>
-                <p class="forgot"><?php echo $this->session->flashdata('error'); ?></p>
-            <?php endif; ?>
-            <?php if ($this->session->flashdata('success')): ?>
-                <p class="forgot"><?php echo $this->session->flashdata('success'); ?></p>
-            <?php endif; ?>
-        <?php echo form_close(); ?>
+        <?php if ($this->session->flashdata('success')): ?>
+            <p style="color: green;"><?php echo $this->session->flashdata('success'); ?></p>
+        <?php endif; ?>
+
+        <?php if ($this->session->flashdata('error')): ?>
+            <p style="color: red;"><?php echo $this->session->flashdata('error'); ?></p>
+        <?php endif; ?>
+
+        <?php echo validation_errors(); ?>
+
+        <form method="post" action="<?php echo site_url('register'); ?>">
+            <label>Name:</label>
+            <input type="text" name="nama" value="<?php echo set_value('nama'); ?>"><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" value="<?php echo set_value('email'); ?>"><br>
+
+            <label>Alamat</label>
+            <input type="text" name="alamat">
+
+            <label>Password:</label>
+            <input type="password" name="password"><br>
+
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password"><br>
+
+            <button type="submit">Register</button>
+        </form>
     </div>
 </body>
 
