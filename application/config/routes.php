@@ -13,4 +13,4 @@ $route['registrasi'] = 'user/Users/registrasi';
 $route['register'] = 'user/Users/register';
 $route['loginadmin'] = 'admin/Admin/index';
 
-$route['dashboard'] = 'admin'
+$route['dashboard'] = 'admin/Dashboard/index';
