@@ -1,7 +1,7 @@
 <?php
 class M_admin extends CI_Model
 {
-	function get_user($email,$password) {
+	function get_admin($email,$password) {
 		$where = array(
 			'email' => $email,
 			'password' => $password,
@@ -12,7 +12,7 @@ class M_admin extends CI_Model
 			return $value;
 		}
 	}
-	public function insert_user($data) {
+	public function insert_admin($data) {
         return $this->db->insert('admin', $data);
     }
 

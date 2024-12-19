@@ -11,6 +11,11 @@ $route['userlogin'] = 'user/Users/login';
 
 $route['registrasi'] = 'user/Users/registrasi';
 $route['register'] = 'user/Users/register';
+
 $route['loginadmin'] = 'admin/Admin/index';
+$route['adminlogin'] = 'admin/Admin/login';
 
 $route['dashboard'] = 'admin/Dashboard/index';
+$route['registrasii'] = 'admin/Admin/registrasi';
+$route['registerr'] = 'admin/Admin/register';
+

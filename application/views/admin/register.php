@@ -94,7 +94,7 @@
 
         <?php echo validation_errors(); ?>
 
-        <form method="post" action="<?php echo site_url('register'); ?>">
+        <form method="post" action="<?php echo site_url('registerr'); ?>">
             <label>Name:</label>
             <input type="text" name="nama" value="<?php echo set_value('nama'); ?>"><br>
 

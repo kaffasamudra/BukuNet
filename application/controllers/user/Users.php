@@ -34,7 +34,7 @@ class Users extends CI_Controller
 				$this->session->set_userdata('alamat', $user->alamat);
 				$this->session->set_userdata('id_user', $user->id);
 
-				redirect(base_url("dashboard"));
+				redirect(base_url("perpusgo"));
 			} else {
 				$this->session->set_flashdata('error', 'nama atau password salah');
 				redirect(base_url("loginuser"));

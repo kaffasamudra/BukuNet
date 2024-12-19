@@ -84,7 +84,7 @@
 
 <body>
     <div class="login-dark">
-        <?php echo form_open('userlogin'); ?>
+        <?php echo form_open('adminlogin'); ?>
             <div class="illustration">
                 <!-- Gunakan <img> untuk menampilkan gambar -->
                 <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
