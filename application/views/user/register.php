@@ -5,7 +5,7 @@
     <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login user</title>
+    <title>Registrasi User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>"> <!-- Pastikan file style.css berada di folder assets/css -->
@@ -94,23 +94,31 @@
 
         <?php echo validation_errors(); ?>
 
-        <form method="post" action="<?php echo site_url('register'); ?>">
-            <label>Name:</label>
-            <input type="text" name="nama" value="<?php echo set_value('nama'); ?>"><br>
+        <form method="post" action="<?php echo site_url('registerr'); ?>">
+            <div class="illustration">
+                <img src="<?= base_url('assets/img/logo perpus.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="nama" placeholder="Nama" value="<?php echo set_value('nama'); ?>"><br>
+            </div>
 
-            <label>Email:</label>
-            <input type="email" name="email" value="<?php echo set_value('email'); ?>"><br>
+            <div class="form-group">
+              <input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>"><br>
+            </div>
 
-            <label>Alamat</label>
-            <input type="text" name="alamat">
+            <div class="form-group">
+              <input class="form-control" type="text" name="alamat" placeholder='Alamat'>
+            </div>
 
-            <label>Password:</label>
-            <input type="password" name="password"><br>
+            <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Password"><br>
+            </div>
 
-            <label>Confirm Password:</label>
-            <input type="password" name="confirm_password"><br>
+            <div class="form-group">
+              <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password"><br>
+            </div>
 
-            <button type="submit">Register</button>
+            <button class="btn btn-primary btn-block" type="submit">Register</button>
         </form>
     </div>
 </body>

@@ -87,7 +87,7 @@
         <?php echo form_open('userlogin'); ?>
             <div class="illustration">
                 <!-- Gunakan <img> untuk menampilkan gambar -->
-                <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
+                <img src="<?= base_url('assets/img/logo perpus.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
             </div>
             <div class="form-group">
                 <input class="form-control" type="text" name="email" id="email" placeholder="email" required>
