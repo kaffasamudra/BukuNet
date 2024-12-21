@@ -51,7 +51,8 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="<?= base_url("dashboard") ?>" class="nav-item nav-link active">Home</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Pinjam Buku</a>
+                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Buku</a>
+                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
