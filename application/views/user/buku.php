@@ -105,9 +105,6 @@
                             <h5 class="card-title text-center">
                                 Basic Table
                             </h5>
-                            <h6 class="card-subtitle text-muted">
-                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTodolist">+ Tulis To Do List</a>
-                            </h6>
                         </div>
                         <div class="card-body">
                             <div id="flash-message" data-message="<?= $this->session->flashdata('message') ?>"></div>
@@ -121,16 +118,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no=1; foreach($todolist as $todolist): ?>
+                                    <?php $no=1; foreach($buku as $buku): ?>
                                     <tr>
                                         <td>
                                             <?=$no++?>
                                         </td>
                                         <td>
-                                            <div><?= $todolist->title ?></div>
+                                            <div><?= $buku->judul ?></div>
                                         </td>
                                         <td>
-                                            <div class="text-gray"><small><?= $todolist->created_at ?><small></div>
+                                            <div class="text-gray"><small><?= $buku->created_at ?><small></div>
                                         </td>
                                         <td>
                                             <div class="action">

@@ -19,3 +19,4 @@ $route['dashboard'] = 'admin/Dashboard/index';
 $route['registrasii'] = 'admin/Admin/registrasi';
 $route['registerr'] = 'admin/Admin/register';
 
+$route['buku'] = 'user/Buku/index';
