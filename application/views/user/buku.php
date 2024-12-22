@@ -113,34 +113,32 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">Aksi</th>
+                                        <th scope="col">Penulis</th>
+                                        <th scope="col">penerbit</th>
+                                        <th scope="col">Tahun penerbit</th>
+                                        <th scope="col">jumlah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no=1; foreach($buku as $buku): ?>
+                                    <?php $no=1; foreach($buku as $b): ?>
                                     <tr>
                                         <td>
                                             <?=$no++?>
                                         </td>
                                         <td>
-                                            <div><?= $buku->judul ?></div>
+                                            <div><?= $b->judul ?></div>
                                         </td>
                                         <td>
-                                            <div class="text-gray"><small><?= $buku->created_at ?><small></div>
+                                            <div class="text-gray"><small><?= $b->penulis ?><small></div>
                                         </td>
                                         <td>
-                                            <div class="action">
-                                                <a href="<?= site_url('viewtodolist/'.$todolist->slug) ?>" class="btn btn-warning" role="button" data-toggle="modal" data-target="#previewModal">Preview</a>
-                                                <?php if (date("Y-m-d",strtotime($todolist->created_at))==date("Y-m-d")): ?>
-                                                    <a href="<?= site_url('editform/'.$todolist->id) ?>" class="btn btn-success" role="button" onclick="editconfirm(this)">Edit</a>
-                                                <?php endif ?>
-                                                <a href="#" 
-                                                    data-delete-url="<?= site_url('user/post_todolist/delete/'.$todolist->id) ?>" 
-                                                    class="btn btn-danger" 
-                                                    role="button"
-                                                    onclick="deleteConfirm(this)">Delete</a>
-                                            </div>
+                                            <div class="text-gray"><small><?= $b->penerbit ?><small></div>
+                                        </td>
+                                        <td>
+                                            <div class="text-gray"><small><?= $b->tahun_terbit ?><small></div>
+                                        </td>
+                                        <td>
+                                            <div class="text-gray"><small><?= $b->jumlah ?><small></div>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
