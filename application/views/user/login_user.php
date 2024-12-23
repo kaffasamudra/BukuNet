@@ -96,7 +96,7 @@
                 <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <input class="btn btn-primary btn-block" type="submit" value="Login">
-            <a href="<?= base_url('forgotpassword') ?>" class="forgot">Forgot your password?</a>
+            <a href="<?= base_url('registrasi') ?>" class="forgot">Belum punya akun? Register</a>
             <?php if ($this->session->flashdata('error')): ?>
                 <p class="forgot"><?php echo $this->session->flashdata('error'); ?></p>
             <?php endif; ?>

@@ -44,7 +44,7 @@ class Users extends CI_Controller
 
 	public function registrasi()
 	{
-		$this->load->view('user/register');
+		$this->load->view('USER/register');
 	}
 
 	public function register() {

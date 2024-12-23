@@ -58,8 +58,8 @@
                     </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="<?= base_url("staffapp") ?>" class="nav-item nav-link">Home</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Buku</a>
+                        <a href="<?= base_url("perpusgo") ?>" class="nav-item nav-link">Home</a>
+                        <a href="<?= base_url("buku") ?>" class="nav-item nav-link active">Buku</a>
                         <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
@@ -367,18 +367,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
-<script>
-    $(document).ready(function() {
-        if ($.fn.DataTable.isDataTable('#myTable')) {
-            $('#myTable').DataTable().destroy(); // Hapus DataTables yang sebelumnya
-        }
-        $('#myTable').DataTable({
-            "language": {
-                "search": "Cari Buku:"
+    <script>
+        $(document).ready(function() {
+            if ($.fn.DataTable.isDataTable('#myTable')) {
+                $('#myTable').DataTable().destroy(); // Hapus DataTables yang sebelumnya
             }
+            $('#myTable').DataTable({
+                "language": {
+                    "search": "Cari Buku:"
+                }
+            });
         });
-    });
-</script>
+    </script>
 
     <script>
         $(window).scroll(function () {
