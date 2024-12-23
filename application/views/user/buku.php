@@ -4,7 +4,7 @@
     <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StaffApp</title>
+    <title>PerpusGo</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0 pt-2">
-                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">StaffApp</h1>
+                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">PerpusGo</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
@@ -80,7 +80,7 @@
                             <?php endforeach; ?>
                         <?php else: ?>
                             <!-- Menampilkan tombol login jika user belum login -->
-                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #00d084; color: white;">Log In</a>
+                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #FFD700; color: white;">Log In</a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
                 <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 animate__animated" data-animation="animate__fadeInDown">To Do List</h4>
+                    <h4 class="text-white display-4 mb-4 animate__animated" data-animation="animate__fadeInDown">Daftar Buku</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 animate__animated" data-animation="animate__fadeInDown">
                         <li class="breadcrumb-item"><a href="<?= base_url("staffapp") ?>">Home</a></li>
-                        <li class="breadcrumb-item active text-primary">To Do List</li>
+                        <li class="breadcrumb-item active text-primary">Daftar Buku</li>
                     </ol>    
                 </div>
             </div>
@@ -367,9 +367,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
-    <script>
-        DataTable('#myTable');
-    </script>
+<script>
+    $(document).ready(function() {
+        if ($.fn.DataTable.isDataTable('#myTable')) {
+            $('#myTable').DataTable().destroy(); // Hapus DataTables yang sebelumnya
+        }
+        $('#myTable').DataTable({
+            "language": {
+                "search": "Cari Buku:"
+            }
+        });
+    });
+</script>
+
     <script>
         $(window).scroll(function () {
             var navbar = $('.navbar');
