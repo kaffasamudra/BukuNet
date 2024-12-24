@@ -164,7 +164,7 @@
         <div class="container  py-5">
             <div class="text-center mx-auto pb-5 animate__animated" data-animation="animate__slideInDown" style="max-width: 800px;">
                 <h4 class="text-uppercase text-info">Home</h4>
-                <h1 class="display-3 text-capitalize mb-3">Perpustakaan Widya Mandala</h1>
+                <h1 class="display-3 text-capitalize mb-3">Perpustakaan Digital BukuNet</h1>
             </div>
             <div class="row gx-0 gy-4 align-items-center">
                 <div class="col-lg-6 col-xl-4">
@@ -173,8 +173,8 @@
                             <div class="col-12">
                                 <div class="d-flex">
                                     <div class="unggulan-content text-end slide-in-left ">
-                                        <a href="" class="h4 d-inline-block md-3">Tentang Bank Bantul</a>
-                                        <p class="mb-0 small">PT BPR Bank Bantul (Perseroda) adalah bank daerah yang melayani masyarakat Bantul dengan produk perbankan dan kredit untuk mendukung UMKM dan pertumbuhan ekonomi lokal.</p>
+                                        <a href="" class="h4 d-inline-block md-3">Koleksi Lengkap</a>
+                                        <p class="mb-0 small">Perpustakaan ini menyediakan berbagai jenis buku dari berbagai kategori, mulai dari fiksi, nonfiksi, akademik, hingga referensi khusus..</p>
                                     </div>
                                     <div class="ps-4">
                                         <img src="<?= base_url("assets/img/logo perpus.png") ?>" alt="Icon" class="unggulan-btn">
@@ -188,8 +188,8 @@
                             <div class="col-12">
                                 <div class="d-flex">
                                     <div class="unggulan-content text-end">
-                                        <a href="" class="h4 d-inline-block mb-3">Penghargaan</a>
-                                        <p class="mb-0 small">Bank Bantul telah menerima berbagai penghargaan atas kontribusinya dalam mendukung perekonomian daerah serta keuangan inklusif di Bantul.</p>
+                                        <a href="" class="h4 d-inline-block mb-3">Peminjaman Mudah</a>
+                                        <p class="mb-0 small">Proses peminjaman dan pengembalian buku dapat dilakukan secara online, sehingga lebih praktis tanpa harus datang langsung ke perpustakaan.</p>
                                     </div>
                                     <div class="ps-4">
                                         <div class="unggulan-btn"><i class="bi bi-award-fill text-white fs-1"></i></div>
@@ -203,8 +203,8 @@
                             <div class="col-12">
                                 <div class="d-flex">
                                     <div class="unggulan-content text-end">
-                                        <a href="#" class="h4 d-inline-block mb-3">Acara Besar</a>
-                                        <p class="mb-0 small">Bank Bantul secara rutin mengadakan acara undian berhadiah untuk nasabah setia, seperti undian Tabungan Tamansari, dengan hadiah besar berupa mobil dan sepeda motor. Acara ini bertujuan untuk meningkatkan loyalitas nasabah.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Ulasan Buku</a>
+                                        <p class="mb-0 small">Pengguna dapat memberikan ulasan dan rating pada buku yang telah dibaca, membantu pengguna lain dalam memilih bacaan yang sesuai.</p>
                                     </div>
                                     <div>
                                         <div class="unggulan-btn"><i class="bi bi-calendar-check text-white fs-1"></i></div>
@@ -228,8 +228,8 @@
                                         <div class="unggulan-btn"><i class="bi bi-heart-fill text-white fs-1"></i></div>
                                     </div>
                                     <div class="unggulan-content">
-                                        <a href="#" class="h4 d-inline-block mb-3">Program Sosial</a>
-                                        <p class="mb-0 small">Sebagai bentuk kepedulian terhadap masyarakat, Bank Bantul juga aktif dalam program sosial dan edukasi keuangan kepada masyarakat, terutama kalangan pelajar dan mahasiswa.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Kategori Buku</a>
+                                        <p class="mb-0 small">Buku-buku dikelompokkan dalam kategori yang jelas, memudahkan pencarian berdasarkan genre, subjek, atau topik tertentu.</p>
                                     </div>
                                 </div>
                             </div>
@@ -243,8 +243,8 @@
                                         <div class="unggulan-btn"><i class="bi bi-phone-fill text-white fs-1"></i></div>
                                     </div>
                                     <div class="unggulan-content">
-                                        <a href="#" class="h4 d-inline-block mb-3">Inovasi Digital</a>
-                                        <p class="mb-0 small">Bank Bantul selalu berusaha untuk berinovasi dengan menghadirkan layanan digital terbaru, seperti mobile banking dan internet banking untuk kemudahan nasabah.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Manajemen Akun</a>
+                                        <p class="mb-0 small">Setiap pengguna memiliki akun pribadi untuk melihat riwayat peminjaman, buku favorit, dan status buku yang sedang dipinjam.</p>
                                     </div>
                                 </div>
                             </div>
@@ -258,8 +258,8 @@
                                         <div class="unggulan-btn"><i class="bi bi-trophy-fill text-white fs-1"></i></div>
                                     </div>
                                     <div class="unggulan-content">
-                                        <a href="#" class="h4 d-inline-block mb-3">Kegiatan Olahraga</a>
-                                        <p class="mb-0 small">Bank Bantul juga aktif dalam mendukung kegiatan olahraga, seperti sponsoring turnamen sepakbola dan kegiatan lainnya untuk mempromosikan gaya hidup sehat di masyarakat.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Admin Profesional</a>
+                                        <p class="mb-0 small">Perpustakaan dikelola oleh admin yang memastikan semua buku tersedia, data pengguna terorganisir, dan sistem berjalan dengan lancar.</p>
                                     </div>
                                 </div>
                             </div>
