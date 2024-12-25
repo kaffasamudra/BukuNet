@@ -1,8 +1,5 @@
 <?php
 
-/**
- * 
- */
 class Buku extends CI_controller
 {
 	
