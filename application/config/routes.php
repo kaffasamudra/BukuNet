@@ -5,7 +5,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['perpusgo'] = 'user/Dashboard/index';
+$route['bukunet'] = 'user/Dashboard/index';
 $route['loginuser'] = 'user/Users/index';
 $route['userlogin'] = 'user/Users/login';
 
@@ -20,3 +20,7 @@ $route['registrasii'] = 'admin/Admin/registrasi';
 $route['registerr'] = 'admin/Admin/register';
 
 $route['buku'] = 'user/Buku/index';
+$route['peminjaman'] = 'user/peminjaman/index';
+
+$route['peminjaman/form/(.+)'] = 'peminjaman/form/$1';
+$route['peminjaman/simpan'] = 'peminjaman/simpan';
