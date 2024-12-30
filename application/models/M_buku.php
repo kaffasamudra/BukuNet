@@ -1,8 +1,5 @@
 <?php
 
-/**
- * 
- */
 class M_buku extends CI_Model
 {
 	
