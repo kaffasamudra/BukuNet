@@ -4,7 +4,7 @@
     <link rel="icon" href="<?= base_url("assets/img/logo perpus.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PerpusGo</title>
+    <title>BukuNet</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
@@ -24,7 +24,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0 pt-2">
-                    <h1 class="heading"><img src="<?= base_url("assets/img/logo perpus.png") ?>">PerpusGo</h1>
+                    <h1 class="heading"><img src="<?= base_url("assets/img/logo perpus.png") ?>">BukuNet</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
@@ -50,7 +50,7 @@
                     </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="<?= base_url("perpusgo") ?>" class="nav-item nav-link active">Home</a>
+                        <a href="<?= base_url("BukuNet") ?>" class="nav-item nav-link active">Home</a>
                         <a href="<?= base_url("buku") ?>" class="nav-item nav-link">Buku</a>
                         <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
@@ -155,7 +155,7 @@
     <!-- marque -->
     <div class="container my-5">
         <div class="marquee-container">
-            <span class="marquee-text">PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    PerpusGo                    </span>
+            <span class="marquee-text">BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    BukuNet                    </span>
         </div>
     </div>
     <!-- Ulangi elemen dengan kelas animate__animated animate__slideInLeft atau animate__slideInRight sesuai kebutuhan -->
@@ -342,7 +342,7 @@
                 <div class="col-md-4 footer-col">
                     <div class="footer_detail">
                         <a href="" class="footer-logo">
-                            PerpusGo
+                            BukuNet
                         </a>
                         <p>
                             Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.
@@ -444,7 +444,7 @@
                 <div class="col-md-4 footer-col">
                     <div class="footer_detail">
                         <a href="" class="footer-logo">
-                            PerpusGo
+                            BukuNet
                         </a>
                         <p>
                             Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.

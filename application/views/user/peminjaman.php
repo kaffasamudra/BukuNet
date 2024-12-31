@@ -4,7 +4,7 @@
     <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StaffApp</title>
+    <title>Bukunet</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0 pt-2">
-                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">StaffApp</h1>
+                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">Bukunet</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
@@ -58,36 +58,31 @@
                     </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="<?= base_url("staffapp") ?>" class="nav-item nav-link">Home</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link active">To Do List</a>
-                        <a href="<?= base_url("tiketing") ?>" class="nav-item nav-link">Tiketing</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                            <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Program</a></li>
-                            </ul>
-                        </div>
+                        <a href="<?= base_url("bukunet") ?>" class="nav-item nav-link">Home</a>
+                        <a href="<?= base_url("buku") ?>" class="nav-item nav-link active">Buku</a>
+                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
                     <div class="d-none d-lg-block">
-                        <?php if ($this->session->userdata('username')): ?>
+                        <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
-                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
                                 <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
-                                <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
-                                <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
+                                <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
+                                <h5 class="card-title">(<?php echo $this->session->userdata('email'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
-                                <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
+                                <a href="<?= base_url('user/users/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <!-- Menampilkan tombol login jika user belum login -->
-                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #00d084; color: white;">Log In</a>
+                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #FFD700; color: white;">Log In</a>
                         <?php endif; ?>
+                    </div>
                     </div>
                 </div>
             </nav>     
@@ -95,10 +90,10 @@
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
                 <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 animate__animated" data-animation="animate__fadeInDown">To Do List</h4>
+                    <h4 class="text-white display-4 mb-4 animate__animated" data-animation="animate__fadeInDown">Daftar Buku</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 animate__animated" data-animation="animate__fadeInDown">
                         <li class="breadcrumb-item"><a href="<?= base_url("staffapp") ?>">Home</a></li>
-                        <li class="breadcrumb-item active text-primary">To Do List</li>
+                        <li class="breadcrumb-item active text-primary">Daftar Buku</li>
                     </ol>    
                 </div>
             </div>
@@ -107,58 +102,48 @@
     <main class="content px-3 py-2">
                 <div class="container-fluid">
                     <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title text-center">
-                                Basic Table
-                            </h5>
-                            <h6 class="card-subtitle text-muted">
-                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTodolist">+ Tulis To Do List</a>
-                            </h6>
-                        </div>
-                        <div class="card-body">
-                            <div id="flash-message" data-message="<?= $this->session->flashdata('message') ?>"></div>
-                            <table id="myTable" class="table table-striped ov" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Judul</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $no=1; foreach($todolist as $todolist): ?>
-                                    <tr>
-                                        <td>
-                                            <?=$no++?>
-                                        </td>
-                                        <td>
-                                            <div><?= $todolist->title ?></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-gray"><small><?= $todolist->created_at ?><small></div>
-                                        </td>
-                                        <td>
-                                            <div class="action">
-                                                <a href="<?= site_url('viewtodolist/'.$todolist->slug) ?>" class="btn btn-warning" role="button" data-toggle="modal" data-target="#previewModal">Preview</a>
-                                                <?php if (date("Y-m-d",strtotime($todolist->created_at))==date("Y-m-d")): ?>
-                                                    <a href="<?= site_url('editform/'.$todolist->id) ?>" class="btn btn-success" role="button" onclick="editconfirm(this)">Edit</a>
-                                                <?php endif ?>
-                                                <a href="#" 
-                                                    data-delete-url="<?= site_url('user/post_todolist/delete/'.$todolist->id) ?>" 
-                                                    class="btn btn-danger" 
-                                                    role="button"
-                                                    onclick="deleteConfirm(this)">Delete</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
+                         <form action="<?= base_url('peminjaman/simpan') ?>" method="post">
+                            <input type="hidden" name="id_buku" value="<?= htmlspecialchars($buku->id) ?>">
+
+                            <label>Nama Peminjam:</label>
+                            <input type="text" value="<?= htmlspecialchars($user->nama) ?>" readonly><br>
+
+                            <label>Judul Buku:</label>
+                            <input type="text" value="<?= htmlspecialchars($buku->judul) ?>" readonly><br>
+
+                            <label>Tanggal Pinjam:</label>
+                            <input type="text" value="<?= date('Y-m-d') ?>" readonly><br>
+
+                            <label>Tanggal Kembali:</label>
+                            <input type="text" value="<?= date('Y-m-d', strtotime("+7 days")) ?>" readonly><br>
+
+                            <button type="submit">Pinjam</button>
+                        </form>
                     </div>
                 </div>
             </main>
+<?php foreach($buku as $b): ?>
+<div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Informasi Buku</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Penulis:</strong> <?= $b->penulis ?></p>
+                <p><strong>Penerbit:</strong> <?= $b->penerbit ?></p>
+                <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
+            </div>
+            <div class="modal-footer">
+                <a href="<?= base_url('peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>
 
     <!-- Modal -->
     <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -379,8 +364,18 @@
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
     <script>
-        DataTable('#myTable');
+        $(document).ready(function() {
+            if ($.fn.DataTable.isDataTable('#myTable')) {
+                $('#myTable').DataTable().destroy(); // Hapus DataTables yang sebelumnya
+            }
+            $('#myTable').DataTable({
+                "language": {
+                    "search": "Cari Buku:"
+                }
+            });
+        });
     </script>
+
     <script>
         $(window).scroll(function () {
             var navbar = $('.navbar');

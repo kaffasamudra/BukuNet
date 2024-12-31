@@ -4,7 +4,7 @@
     <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PerpusGo</title>
+    <title>Bukunet</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0 pt-2">
-                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">PerpusGo</h1>
+                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">Bukunet</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
@@ -58,23 +58,23 @@
                     </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="<?= base_url("perpusgo") ?>" class="nav-item nav-link">Home</a>
+                        <a href="<?= base_url("bukunet") ?>" class="nav-item nav-link">Home</a>
                         <a href="<?= base_url("buku") ?>" class="nav-item nav-link active">Buku</a>
                         <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
                     <div class="d-none d-lg-block">
-                        <?php if ($this->session->userdata('username')): ?>
+                        <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
-                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
                                 <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
-                                <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
-                                <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
+                                <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
+                                <h5 class="card-title">(<?php echo $this->session->userdata('email'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
-                                <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
+                                <a href="<?= base_url('user/users/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
                             <?php endforeach; ?>
@@ -82,6 +82,7 @@
                             <!-- Menampilkan tombol login jika user belum login -->
                             <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #FFD700; color: white;">Log In</a>
                         <?php endif; ?>
+                    </div>
                     </div>
                 </div>
             </nav>     
@@ -112,11 +113,10 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Gambar</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">Penulis</th>
-                                        <th scope="col">penerbit</th>
-                                        <th scope="col">Tahun penerbit</th>
                                         <th scope="col">jumlah</th>
+                                        <th scope="col">aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -126,19 +126,18 @@
                                             <?=$no++?>
                                         </td>
                                         <td>
+                                            <div><?= $b->gambar ?></div>
+                                        </td>
+                                        <td>
                                             <div><?= $b->judul ?></div>
                                         </td>
                                         <td>
-                                            <div class="text-gray"><small><?= $b->penulis ?><small></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-gray"><small><?= $b->penerbit ?><small></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-gray"><small><?= $b->tahun_terbit ?><small></div>
-                                        </td>
-                                        <td>
                                             <div class="text-gray"><small><?= $b->jumlah ?><small></div>
+                                        </td>
+                                        <td>
+                                            <div class="action">
+                                                <a href="#" class="btn btn-warning" role="button"  data-toggle="modal" data-target="#preview<?= $b->id ?>">Preview</a>
+                                            </div>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
@@ -148,6 +147,28 @@
                     </div>
                 </div>
             </main>
+<?php foreach($buku as $b): ?>
+<div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Informasi Buku</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Penulis:</strong> <?= $b->penulis ?></p>
+                <p><strong>Penerbit:</strong> <?= $b->penerbit ?></p>
+                <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
+            </div>
+            <div class="modal-footer">
+                <a href="<?= base_url('peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>
 
     <!-- Modal -->
     <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
