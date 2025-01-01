@@ -32,7 +32,7 @@ class Users extends CI_Controller
 				$this->session->set_userdata('nama', $user->nama);
 				$this->session->set_userdata('email', $user->email);
 				$this->session->set_userdata('alamat', $user->alamat);
-				$this->session->set_userdata('id_user', $user->id);
+				$this->session->set_userdata('id', $user->id);
 
 				redirect(base_url("bukunet"));
 			} else {
