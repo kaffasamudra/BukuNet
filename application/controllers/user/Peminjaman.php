@@ -11,13 +11,12 @@ class Peminjaman extends CI_Controller {
 
     public function index() {
         $data['users'] = $this->M_users->get_users();
-        
         $data['peminjaman'] = $this->M_peminjaman->get_peminjaman();
-        $data['buku'] = $this->M_buku->get_buku();
-        $this->load->view('user/peminjaman', $data);
+        $this->load->view('user/riwayat', $data);
     }
 
     public function form($id_buku) {
+        $data['users'] = $this->M_users->get_users();
         // Pastikan user sudah login
         if (!$this->session->userdata('id')) {
             redirect('loginuser'); // Redirect jika belum login
@@ -25,7 +24,7 @@ class Peminjaman extends CI_Controller {
 
         // Ambil data user yang sedang login
         $id_user = $this->session->userdata('id');
-        $user = $this->M_users->get_users($id_user);
+        $user = $this->M_users->get_users();
 
         // Ambil data buku berdasarkan ID
         $buku = $this->M_buku->get_buku_id($id_buku);
@@ -48,8 +47,8 @@ class Peminjaman extends CI_Controller {
         $data = [
             'id_user' => $this->session->userdata('id'),
             'id_petugas' => 1, // Sesuaikan dengan admin/petugas
-            'id_buku' => $this->input->post('id_buku'),
-            'tanggal_pinjam' => date('Y-m-d'),
+            'buku' => $this->input->post('judul'),
+            'tanggal_pinjam' => date('Y-m-d H:i:s'),
             'tanggal_kembali' => date('Y-m-d', strtotime("+7 days")),
             'status' => 'dipinjam'
         ];
