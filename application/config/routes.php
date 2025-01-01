@@ -23,4 +23,7 @@ $route['buku'] = 'user/Buku/index';
 $route['peminjaman'] = 'user/peminjaman/index';
 
 $route['peminjaman/form/(.+)'] = 'peminjaman/form/$1';
-$route['peminjaman/simpan'] = 'peminjaman/simpan';
+$route['peminjaman/simpan'] = 'user/peminjaman/simpan';
+
+$route['editform/(.+)'] = 'admin/data_peminjaman/edit/$1';
+$route['datapeminjaman'] = 'admin/data_peminjaman/index';
