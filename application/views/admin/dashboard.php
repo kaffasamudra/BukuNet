@@ -22,7 +22,7 @@
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        Admin Menu
+                        Petugas Menu
                     </li>
                     <li class="sidebar-item">
                         <a href="<?= site_url('admin/dashboard') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
@@ -30,22 +30,15 @@
                     <li class="sidebar-item">
                         <a href="<?= site_url('admin/todolist') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
-                            To Do List
+                            Data Buku
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="<?= site_url('admin/tiket') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-ticket pe-2"></i>
-                            Tiketing
+                            Data Peminjaman
                         </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="<?= site_url('admin/feedback') ?>" class="sidebar-link collapsed" data-bs-target="#auth" 
-                            aria-expanded="false"><i class="fa-solid fa-list pe-2"></i>
-                            Feedback
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
+                    </li>                    <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i>
                             Setting
