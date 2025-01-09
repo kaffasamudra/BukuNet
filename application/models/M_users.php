@@ -17,7 +17,7 @@ class M_users extends CI_Model
     }
 
     public function get_users() {
-        $id=$this->session->userdata("id_user");
+        $id=$this->session->userdata("id");
         $this->db->where("id",$id);
         return $this->db->get('users')->result();
     }
