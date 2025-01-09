@@ -60,7 +60,7 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="<?= base_url("bukunet") ?>" class="nav-item nav-link">Home</a>
                         <a href="<?= base_url("buku") ?>" class="nav-item nav-link active">Buku</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
+                        <a href="<?= base_url("peminjaman") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
@@ -147,28 +147,28 @@
                     </div>
                 </div>
             </main>
-<?php foreach($buku as $b): ?>
-<div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Informasi Buku</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <?php foreach($buku as $b): ?>
+            <div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Informasi Buku</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Penulis:</strong> <?= $b->penulis ?></p>
+                            <p><strong>Penerbit:</strong> <?= $b->penerbit ?></p>
+                            <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <p><strong>Penulis:</strong> <?= $b->penulis ?></p>
-                <p><strong>Penerbit:</strong> <?= $b->penerbit ?></p>
-                <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
-            </div>
-            <div class="modal-footer">
-                <a href="<?= base_url('peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endforeach; ?>
+            <?php endforeach; ?>
 
     <!-- Modal -->
     <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
