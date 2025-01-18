@@ -12,7 +12,19 @@ class Peminjaman extends CI_Controller {
     public function index() {
         $data['users'] = $this->M_users->get_users();
         $data['peminjaman'] = $this->M_peminjaman->get_peminjaman();
+        $data['count_peminjaman'] = $this->M_peminjaman->count_peminjaman();
+
         $this->load->view('user/riwayat', $data);
+    }
+
+    public function cek_jumlah($id_buku) {
+        $jumlah_tersedia = $this->M_buku->cek_jumlah_buku($id_buku);
+        
+        if ($jumlah_tersedia) {
+            echo json_encode(['status' => 'tersedia']);
+        } else {
+            echo json_encode(['status' => 'habis', 'pesan' => 'Maaf, buku sudah dipinjam semua.']);
+        }
     }
 
     public function form($id_buku) {
