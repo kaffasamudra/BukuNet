@@ -60,7 +60,7 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="<?= base_url("bukunet") ?>" class="nav-item nav-link">Home</a>
                         <a href="<?= base_url("buku") ?>" class="nav-item nav-link active">Buku</a>
-                        <a href="<?= base_url("todolist") ?>" class="nav-item nav-link">Peminjaman</a>
+                        <a href="<?= base_url("peminjaman") ?>" class="nav-item nav-link">Peminjaman</a>
                         <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
                     </div>
                     <!-- mode desktop -->
@@ -92,8 +92,9 @@
                 <div class="container text-center py-5" style="max-width: 900px;">
                     <h4 class="text-white display-4 mb-4 animate__animated" data-animation="animate__fadeInDown">Daftar Buku</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 animate__animated" data-animation="animate__fadeInDown">
-                        <li class="breadcrumb-item"><a href="<?= base_url("staffapp") ?>">Home</a></li>
-                        <li class="breadcrumb-item active text-primary">Daftar Buku</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url("bukunet") ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url("buku") ?>">Buku</a></li>
+                        <li class="breadcrumb-item active text-primary">Pinjam</li>
                     </ol>    
                 </div>
             </div>
@@ -102,14 +103,17 @@
     <main class="content px-3 py-2">
                 <div class="container-fluid">
                     <div class="card border-0">
+                        <?php foreach ($users as $user): ?>
+                            
+                        <?php endforeach ?>
                          <form action="<?= base_url('peminjaman/simpan') ?>" method="post">
-                            <input type="hidden" name="id_buku" value="<?= htmlspecialchars($buku->id) ?>">
+                            <input type="hidden" name="judul" value="<?= ($buku->judul) ?>">
 
                             <label>Nama Peminjam:</label>
-                            <input type="text" value="<?= htmlspecialchars($user->nama) ?>" readonly><br>
+                            <input type="text" value="<?= ($user->nama) ?>" readonly><br>
 
                             <label>Judul Buku:</label>
-                            <input type="text" value="<?= htmlspecialchars($buku->judul) ?>" readonly><br>
+                            <input type="text" value="<?= ($buku->judul) ?>" readonly><br>
 
                             <label>Tanggal Pinjam:</label>
                             <input type="text" value="<?= date('Y-m-d') ?>" readonly><br>
@@ -122,7 +126,7 @@
                     </div>
                 </div>
             </main>
-<?php foreach($buku as $b): ?>
+<!-- <?php foreach($buku as $b): ?>
 <div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -143,7 +147,7 @@
         </div>
     </div>
 </div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->
 
     <!-- Modal -->
     <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
