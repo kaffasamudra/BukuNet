@@ -88,7 +88,7 @@
                                             <div class="detail-box">
                                                 <h1 class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1s;">Perpustakaan</h1>
                                                 <p class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1.2s;">
-                                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde
+                                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.
                                                 </p>
                                                 <div class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1.4s;">
                                                     <a href="<?= base_url("todolist") ?>">Buka</a>
