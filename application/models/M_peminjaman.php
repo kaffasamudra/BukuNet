@@ -19,4 +19,8 @@ class M_peminjaman extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->update('peminjaman', $data);
     }
+
+    public function count_peminjaman() {
+        return $this->db->count_all('peminjaman');
+    }
 }
