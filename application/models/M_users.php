@@ -1,10 +1,9 @@
 <?php
 class M_users extends CI_Model
 {
-	function get_user($email,$password) {
+	function get_user($email) {
 		$where = array(
 			'email' => $email,
-			'password' => $password,
 		);
 		$this->db->where($where);
 		$query = $this->db->get('users')->result();
