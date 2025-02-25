@@ -112,11 +112,10 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Gambar</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">Penulis</th>
-                                        <th scope="col">penerbit</th>
-                                        <th scope="col">Tahun penerbit</th>
                                         <th scope="col">jumlah</th>
+                                        <th scope="col">aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -126,19 +125,18 @@
                                             <?=$no++?>
                                         </td>
                                         <td>
+                                            <div><?= $b->gambar ?></div>
+                                        </td>
+                                        <td>
                                             <div><?= $b->judul ?></div>
                                         </td>
                                         <td>
-                                            <div class="text-gray"><small><?= $b->penulis ?><small></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-gray"><small><?= $b->penerbit ?><small></div>
-                                        </td>
-                                        <td>
-                                            <div class="text-gray"><small><?= $b->tahun_terbit ?><small></div>
-                                        </td>
-                                        <td>
                                             <div class="text-gray"><small><?= $b->jumlah ?><small></div>
+                                        </td>
+                                        <td>
+                                            <div class="action">
+                                                <a href="#" class="btn btn-warning" role="button"  data-toggle="modal" data-target="#preview<?= $b->id ?>">Preview</a>
+                                            </div>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
@@ -148,7 +146,26 @@
                     </div>
                 </div>
             </main>
-
+    <?php $no=1; foreach($buku as $b): ?>
+    <div class="modal fade" id="preview<?= $b->id ?>" tabindex="-1" role="dialog" aria-labelledby="previewLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Informasi buku</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>Informasi buku</h1>
+                    <p><strong>penulis:</strong> <?= $b->penulis ?></p>
+                    <p><strong>penerbit:</strong> <?= $b->penerbit ?></p>
+                    <p><strong>tahun terbit:</strong> <?= $b->tahun_terbit ?></p>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <?php endforeach ?>        
     <!-- Modal -->
     <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
