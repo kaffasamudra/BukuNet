@@ -163,7 +163,7 @@
                             <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
                         </div>
                         <div class="modal-footer">
-                            <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
+                            <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary btn-pinjam" data-id="<?= $b->id ?>">Pinjam</a>
                         </div>
                     </div>
                 </div>
@@ -462,6 +462,32 @@
                 }
             });
         }
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        $(".btn-pinjam").click(function(e) {
+            e.preventDefault();
+
+            let id_buku = $(this).data("id");
+            let url_form_peminjaman = $(this).attr("href");
+
+            $.ajax({
+                url: "<?= base_url('cekjumlah/') ?>" + id_buku,
+                type: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.status === "tersedia") {
+                        // Jika tersedia, pindah ke halaman form peminjaman
+                        window.location.href = url_form_peminjaman;
+                    } else {
+                        // Jika stok habis, tampilkan alert
+                        alert(response.pesan);
+                    }
+                }
+            });
+        });
+    });
     </script>
 
     <?php if($this->session->flashdata('message')): ?>

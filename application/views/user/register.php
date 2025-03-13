@@ -92,7 +92,7 @@
 
         <?php echo validation_errors(); ?>
 
-        <form method="post" action="<?php echo site_url('registerr'); ?>">
+        <form method="post" action="<?php echo site_url('register'); ?>">
             <div class="illustration">
                 <img src="<?= base_url('assets/img/logo perpus.png'); ?>" alt="Login Illustration" style="width:90px;height:auto;"> 
             </div>
