@@ -31,3 +31,6 @@ $route['editform/(.+)'] = 'admin/data_peminjaman/edit/$1';
 $route['datapeminjaman'] = 'admin/data_peminjaman/index';
 $route['cekjumlah/(.+)'] = 'user/peminjaman/cek_jumlah/$1';
 
+$route['tambah'] = 'user/Koleksi/tambah';
+$route['hapus'] = 'user/Koleksi/hapus';
+$route['koleksi'] = 'user/Koleksi/index';
