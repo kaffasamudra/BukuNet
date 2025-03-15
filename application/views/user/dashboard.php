@@ -18,7 +18,7 @@
 <body>
     <div class="hero_area">
         <div class="bg-box image-overlay">
-            <img src="<?= base_url("assets/img/perpustakaan.jpg") ?>" class="img-fluid w-100">
+            <img src="<?= base_url("assets/img/bukunet.jpeg") ?>" class="img-fluid w-100">
             <div class="overlay"></div>
         </div>
         <div class="container-fluid position-relative p-0">
@@ -45,7 +45,7 @@
                             <?php endforeach; ?>
                         <?php else: ?>
                             <!-- Menampilkan tombol login jika user belum login -->
-                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #FFD700; color: white;">Log In</a>
+                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #0d6efd; color: white;">Log In</a>
                         <?php endif; ?>
                     </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -72,7 +72,7 @@
                             <?php endforeach; ?>
                         <?php else: ?>
                             <!-- Menampilkan tombol login jika user belum login -->
-                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #FFD700; color: white;">Log In</a>
+                            <a href="<?= base_url("userlogin") ?>" class="btn rounded-pill d-inline-flex flex-shrink-0 py-2 px-4" style="background-color: #0d6efd; color: white;">Log In</a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                                                     Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.
                                                 </p>
                                                 <div class="animate__animated" data-animation="animate__slideInRight" style="animation-duration: 1.4s;">
-                                                    <a href="<?= base_url("todolist") ?>">Buka</a>
+                                                    <a href="<?= base_url("bukunet") ?>">Buka</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                                     Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.
                                                 </p>
                                                 <div>
-                                                    <a href="<?= base_url("tiketing") ?>">Buka</a>
+                                                    <a href="<?= base_url("buku") ?>">Buka</a>
                                                 </div>
                                             </div>
                                         </div>

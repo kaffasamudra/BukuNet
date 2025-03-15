@@ -107,9 +107,9 @@
                                     <div class="d-flex align-items-start">
                                         <div class="flex-grow-1">
                                             <h2>
-                                                <?= $count_todolist; ?>
+                                                <?= $count_buku; ?>
                                             </h2>
-                                            <p><a href="<? base_url('listtodolist') ?>">To do list</a></p>
+                                            <p><a href="<? base_url('listtodolist') ?>">Data Buku</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -121,23 +121,9 @@
                                     <div class="d-flex align-items-start">
                                         <div class="flex-grow-1">
                                             <h2>
-                                                <?= $count_tiket; ?>
+                                                <?= $count_peminjaman; ?>
                                             </h2>
-                                            <p><a href="<? base_url('tiket') ?>">Tiket</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0">
-                                <div class="card-body py-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="flex-grow-1">
-                                            <h2>
-                                                <?= $count_feedback; ?>
-                                            </h2>
-                                            <p><a href="<? site_url('admin/feedback') ?>">Feedback</a></p>
+                                            <p><a href="<?= base_url('datapeminjaman') ?>">Data Peminjaman</a></p>
                                         </div>
                                     </div>
                                 </div>

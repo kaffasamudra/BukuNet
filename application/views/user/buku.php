@@ -1,7 +1,7 @@
 <!DOCTYPE html>                                                             
 <html>
 <head>
-    <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
+    <link rel="icon" href="<?= base_url("assets/img/logo perpus.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bukunet</title>
@@ -19,7 +19,7 @@
         .bg-breadcrumb {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?= base_url('assets/img/bank-bantul1.jpg'); ?>');
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('<?= base_url('assets/img/perpus.jpg'); ?>');
             background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;
@@ -33,7 +33,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0 pt-2">
-                    <h1 class="heading"><img src="<?= base_url("assets/img/d199db6c-03df-41a8-b1f8-d3c5bb0263a9.png") ?>">Bukunet</h1>
+                    <h1 class="heading"><img src="<?= base_url("assets/img/logo perpus.png") ?>">Bukunet</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
@@ -163,7 +163,8 @@
                             <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
                         </div>
                         <div class="modal-footer">
-                            <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary btn-pinjam" data-id="<?= $b->id ?>">Pinjam</a>
+                            <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary btn-pinjam" data-id="<?= $b->id ?>">Pinjam</a>\
+                            <button onclick="tambahKeKoleksi(<?= $b->id ?>)">Tambah ke Koleksi</button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +172,7 @@
             <?php endforeach; ?>
 
     <!-- Modal -->
-    <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="moda fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="ocntactModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
