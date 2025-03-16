@@ -34,3 +34,7 @@ $route['cekjumlah/(.+)'] = 'user/peminjaman/cek_jumlah/$1';
 $route['tambah'] = 'user/Koleksi/tambah';
 $route['hapus'] = 'user/Koleksi/hapus';
 $route['koleksi'] = 'user/Koleksi/index';
+
+$route['tersimpan'] = 'user/Koleksi/toggle';
+$route['ulasan/(:num)'] = 'ulasan/index/$1';
+$route['ulasan/tambah'] = 'ulasan/tambah';

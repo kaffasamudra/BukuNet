@@ -30,6 +30,11 @@ class M_koleksi extends CI_Model {
         return $this->db->delete('koleksi', ['id_peminjam' => $id_peminjam, 'id_buku' => $id_buku]);
     }
 
+    public function cek_koleksi($id_peminjam, $id_buku) {
+    return $this->db->get_where('koleksi', ['id_peminjam' => $id_peminjam, 'id_buku' => $id_buku])->num_rows() > 0;
+}
+
+
     // public function select($id_peminjam) {
     //     $this->db->select('buku.*');
     //     $this->db->from('koleksi');
