@@ -28,7 +28,7 @@
                         <a href="<?= base_url('petugas') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= base_url('#') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
+                        <a href="<?= base_url('databuku') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
                             Data Buku
                         </a>

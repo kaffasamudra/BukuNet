@@ -25,16 +25,16 @@
                         Petugas Menu
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= site_url('admin/dashboard') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
+                        <a href="<?= site_url('admin') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= site_url('admin/todolist') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
+                        <a href="<?= site_url('databukuu') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
                             Data Buku
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= site_url('admin/tiket') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
+                        <a href="<?= site_url('datapeminjamen') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-ticket pe-2"></i>
                             Data Peminjaman
                         </a>

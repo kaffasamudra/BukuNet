@@ -17,7 +17,7 @@ $route['register'] = 'user/Users/register';
 $route['registrasii'] = 'admin/Admin/registrasi';
 $route['registerr'] = 'admin/Admin/register';
 
-$route['admin'] = 'admin/Dashboard/index';
+$route['admin'] = 'admin/Dashboard/admin';
 $route['petugas'] = 'admin/Dashboard/petugas';
 
 $route['bukunet'] = 'user/Dashboard/index';
@@ -28,7 +28,7 @@ $route['peminjaman/simpan'] = 'user/peminjaman/simpan';
 
 $route['peminjaman/form/(.+)'] = 'peminjaman/form/$1';
 $route['editform/(.+)'] = 'admin/data_peminjaman/edit/$1';
-$route['datapeminjaman'] = 'admin/data_peminjaman/index';
+$route['datapeminjaman'] = 'admin/data_peminjaman/admin';
 $route['cekjumlah/(.+)'] = 'user/peminjaman/cek_jumlah/$1';
 
 $route['tambah'] = 'user/Koleksi/tambah';
@@ -38,3 +38,8 @@ $route['koleksi'] = 'user/Koleksi/index';
 $route['tersimpan'] = 'user/Koleksi/toggle';
 $route['ulasan/(:num)'] = 'ulasan/index/$1';
 $route['ulasan/tambah'] = 'ulasan/tambah';
+
+$route['databuku'] = 'admin/Buku/petugas';
+$route['databukuu'] = 'admin/Buku/admin';
+
+$route['datapeminjamen'] = 'admin/data_peminjaman/petugas';

@@ -14,7 +14,7 @@ class Buku extends CI_controller
 
 	public function index()
 	{
-		$data['buku']=$this->M_buku->get_buku();
+		$data['buku'] = $this->M_buku->get_buku();
 		$data['users'] = $this->M_users->get_users();
         $data['rata_rating'] = $this->M_ulasan->getRataRating();
         // var_dump($data['rata_rating']);

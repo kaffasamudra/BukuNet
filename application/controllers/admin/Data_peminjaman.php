@@ -15,7 +15,13 @@ class Data_peminjaman extends CI_Controller
         $this->load->library('session');
     }
 
-    public function index() {
+    public function petugas() {
+        $data['users'] = $this->M_users->get_users();
+        $data['peminjaman'] = $this->M_peminjaman->get_peminjaman();
+        $this->load->view('admin/petugas/data_peminjaman', $data);
+    }
+
+    public function admin() {
         $data['users'] = $this->M_users->get_users();
         $data['peminjaman'] = $this->M_peminjaman->get_peminjaman();
         $this->load->view('admin/petugas/data_peminjaman', $data);
