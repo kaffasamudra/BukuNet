@@ -31,15 +31,16 @@
                 </button>
                     <!-- mode mobile -->
                     <div class="d-block d-lg-none my-2">
-                        <?php if ($this->session->userdata('username')): ?>
+                        <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
-                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <img src="<?= base_url('assets/img/'.$image->avatar); ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
-                                <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
-                                <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
+                                <img src="<?= base_url('assets/img/'.$image->avatar); ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
+                                <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
+                                <h5 class="card-title">(<?php echo $this->session->userdata('email'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
-                                <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
+                                <a href="<?= base_url('user/users/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
                             <?php endforeach; ?>
@@ -61,7 +62,7 @@
                             <?php foreach($users as $image): ?>
                             <img src="<?= base_url('assets/img/'.$image->avatar); ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
-                                <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
+                                <img src="<?= base_url('assets/img/'.$image->avatar); ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
                                 <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
                                 <h5 class="card-title">(<?php echo $this->session->userdata('email'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
@@ -320,7 +321,7 @@
                         <h1>Edit Avatar</h1>
                         <div class="form-group">
                             <p>Gambar Sekarang:</p>
-                            <img src="<?= base_url('uploads/' . $image->avatar) ?>" width="200">
+                            <img src="<?= base_url('assets/img/'.$image->avatar); ?>" width="200">
                         </div>
                         <div class="form-group">   
                             <label for="avatar">Ganti Gambar:</label>

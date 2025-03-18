@@ -20,4 +20,9 @@ class M_users extends CI_Model
         $this->db->where("id",$id);
         return $this->db->get('users')->result();
     }
+
+    public function update_avatar($id, $avatar) {
+    $this->db->where('id', $id);
+    return $this->db->update('users', ['avatar' => $avatar]);
+}
 }

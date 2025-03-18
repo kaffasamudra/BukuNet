@@ -92,6 +92,42 @@ class Users extends CI_Controller
         }
     }
 
+    public function update_foto() {
+	    $id_user = $this->session->userdata('id_user'); // Ambil ID user dari session
+
+	    // Konfigurasi upload gambar
+	    $config['upload_path']   = './uploads/';
+	    $config['allowed_types'] = 'jpg|jpeg|png';
+	    $config['max_size']      = 2048;
+	    $config['encrypt_name']  = TRUE; // Supaya nama file unik
+
+	    $this->load->library('upload', $config);
+
+	    if (!$this->upload->do_upload('foto')) {
+	        // Jika upload gagal
+	        $this->session->set_flashdata('error', $this->upload->display_errors());
+	        redirect('user/profile'); // Kembali ke halaman profil
+	    } else {
+	        // Jika upload berhasil
+	        $upload_data = $this->upload->data();
+	        $foto_baru = $upload_data['file_name']; // Ambil nama file baru
+
+	        // Ambil foto lama dari database
+	        $user = $this->user->get_user_by_id($id_user);
+	        $foto_lama = $user->foto;
+
+	        // Hapus foto lama jika ada
+	        if ($foto_lama && file_exists('./uploads/' . $foto_lama)) {
+	            unlink('./uploads/' . $foto_lama);
+	        }
+
+	        // Update foto di database
+	        $this->user->update_foto($id_user, $foto_baru);
+
+	        $this->session->set_flashdata('success', 'Foto berhasil diperbarui!');
+	        redirect('user/profile'); // Kembali ke halaman profil
+	    }
+	}
 
     public function logout() {
 	    $this->session->sess_destroy();

@@ -33,7 +33,7 @@ class Admin extends CI_Controller
 
                 // Redirect based on role
                 if ($admin->role == 'admin') {
-                    redirect('perpusgo');
+                    redirect('admin');
                 } else if ($admin->role == 'petugas') {
                     redirect('petugas');
                 }
