@@ -25,16 +25,16 @@
                         Admin Menu
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= base_url('dashboard') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
+                        <a href="<?= base_url('petugas') ?>" class="sidebar-link"><i class="fa-solid fa-home pe-2"></i>Overview</a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= site_url('admin/tiket') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
+                        <a href="<?= site_url('databuku') ?>" class="sidebar-link collapsed" data-bs-target="#pages"
                             aria-expanded="false"><i class="fa-solid fa-ticket pe-2"></i>
                             Data Buku
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="<?= site_url('admin/feedback') ?>" class="sidebar-link collapsed" data-bs-target="#auth" 
+                        <a href="<?= site_url('datapeminjaman') ?>" class="sidebar-link collapsed" data-bs-target="#auth" 
                             aria-expanded="false"><i class="fa-solid fa-list pe-2"></i>
                             Data Peminjaman
                         </a>

@@ -59,7 +59,7 @@
                     <div class="d-none d-lg-block">
                         <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
-                            <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
+                            <img src="<?= base_url("assets/img/avatar.png") ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
                                 <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
                                 <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 
@@ -172,9 +172,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-flex">
-                                    <div class="unggulan-content text-end slide-in-left ">
+                                    <div class="unggulan-content text-end slide-in-left">
                                         <a href="" class="h4 d-inline-block md-3">Koleksi Lengkap</a>
-                                        <p class="mb-0 small">Perpustakaan ini menyediakan berbagai jenis buku dari berbagai kategori, mulai dari fiksi, nonfiksi, akademik, hingga referensi khusus..</p>
+                                        <p class="mb-0 small">Perpustakaan ini menyediakan berbagai jenis buku dari berbagai kategori, mulai dari fiksi, nonfiksi, hingga referensi khusus.</p>
                                     </div>
                                     <div class="ps-4">
                                         <img src="<?= base_url("assets/img/logo perpus.png") ?>" alt="Icon" class="unggulan-btn">
@@ -203,10 +203,10 @@
                             <div class="col-12">
                                 <div class="d-flex">
                                     <div class="unggulan-content text-end">
-                                        <a href="#" class="h4 d-inline-block mb-3">Ulasan Buku</a>
-                                        <p class="mb-0 small">Pengguna dapat memberikan ulasan dan rating pada buku yang telah dibaca, membantu pengguna lain dalam memilih bacaan yang sesuai.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Manajemen Akun</a>
+                                        <p class="mb-0 small">Setiap pengguna memiliki akun pribadi untuk melihat riwayat peminjaman, buku favorit, dan status buku yang sedang dipinjam.</p>
                                     </div>
-                                    <div>
+                                    <div class="ps-4">
                                         <div class="unggulan-btn"><i class="bi bi-calendar-check text-white fs-1"></i></div>
                                     </div>
                                 </div>
@@ -243,8 +243,8 @@
                                         <div class="unggulan-btn"><i class="bi bi-phone-fill text-white fs-1"></i></div>
                                     </div>
                                     <div class="unggulan-content">
-                                        <a href="#" class="h4 d-inline-block mb-3">Manajemen Akun</a>
-                                        <p class="mb-0 small">Setiap pengguna memiliki akun pribadi untuk melihat riwayat peminjaman, buku favorit, dan status buku yang sedang dipinjam.</p>
+                                        <a href="#" class="h4 d-inline-block mb-3">Ulasan Buku</a>
+                                        <p class="mb-0 small">Pengguna dapat memberikan ulasan dan rating pada buku yang telah dibaca, membantu pengguna lain dalam memilih bacaan yang sesuai.</p>
                                     </div>
                                 </div>
                             </div>

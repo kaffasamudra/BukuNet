@@ -19,7 +19,7 @@
         .bg-breadcrumb {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?= base_url('assets/img/perpustakaan.jpg'); ?>');
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('<?= base_url('assets/img/perpus.jpg'); ?>');
             background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;

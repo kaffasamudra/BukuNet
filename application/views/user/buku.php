@@ -166,7 +166,7 @@
                                 <p><strong>Penulis:</strong> <?= $b->penulis ?></p>
                                 <p><strong>Penerbit:</strong> <?= $b->penerbit ?></p>
                                 <p><strong>Tahun Terbit:</strong> <?= $b->tahun_terbit ?></p>
-                                <p>
+                                <!-- <p>
                                     <?php for ($i = 0; $i < 4 ; $i++): ?>
                                         <?php if ($i <= round($rata_rating[$i]["rating"])): ?>
                                             <span style="color: gold; font-size: 25px;">★</span>
@@ -175,7 +175,7 @@
                                         <?php endif; ?>
                                     <?php endfor; ?>
                                     (<?= number_format($rata_rating[$i]["rating"], 2) ?> / 5)
-                                </p>
+                                </p> -->
                             </div>
                             <div class="modal-footer">
                                 <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>\
