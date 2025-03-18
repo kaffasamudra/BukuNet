@@ -45,10 +45,13 @@
                         </a>
                         <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="<?= base_url('login'); ?>" class="sidebar-link">Login</a>
+                                <a href="<?= base_url('adminlogin'); ?>" class="sidebar-link">Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="<?= base_url('login/logout'); ?>" class="sidebar-link">Logout</a>
+                                <a href="<?= base_url('logout'); ?>" class="sidebar-link">Logout</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="<?= base_url('registrasii'); ?>" class="sidebar-link">Registrasi</a>
                             </li>
                         </ul>
                     </li>

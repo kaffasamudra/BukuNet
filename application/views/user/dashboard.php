@@ -59,7 +59,7 @@
                     <div class="d-none d-lg-block">
                         <?php if ($this->session->userdata('email')): ?>
                             <?php foreach($users as $image): ?>
-                            <img src="<?= base_url("assets/img/avatar.png") ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
+                            <img src="<?= base_url('assets/img/'.$image->avatar); ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px;border-radius: 50%;">
                             <div class="dropdown-menu dropdown-menu-end card-body" aria-labelledby="dropdownMenuButton1">
                                 <img src="<?= base_url('uploads/'.$image->avatar) ?>" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; border-radius: 50%;">
                                 <h5 class="card-title"><?php echo $this->session->userdata('nama'); ?></h5> 

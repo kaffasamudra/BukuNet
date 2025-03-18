@@ -22,9 +22,9 @@ class Admin extends CI_Controller
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             
-            $admin = $this->admin->get_admin($email, $password);
+            $admin = $this->admin->get_admin($email);
             
-            if ($admin->email == $email && $admin->password == $password) {
+            if ($admin && password_verify($password, $admin->password)) {
                 $this->session->set_userdata('nama', $admin->nama);
                 $this->session->set_userdata('role', $admin->role);
                 $this->session->set_userdata('bagian', $admin->bagian);
@@ -35,7 +35,7 @@ class Admin extends CI_Controller
                 if ($admin->role == 'admin') {
                     redirect('perpusgo');
                 } else if ($admin->role == 'petugas') {
-                    redirect('dashboard');
+                    redirect('petugas');
                 }
                 echo $admin->role;
             } else {
@@ -66,7 +66,8 @@ class Admin extends CI_Controller
                 'nama'     => $this->input->post('nama'),
                 'email'    => $this->input->post('email'),
                 'alamat'    => $this->input->post('alamat'),
-                'password' => $this->input->post('password'),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                // 'role'     => $this->input->post('role'),
             ];
 
             if ($this->admin->insert_admin($data)) {

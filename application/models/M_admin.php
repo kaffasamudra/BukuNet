@@ -1,10 +1,9 @@
 <?php
 class M_admin extends CI_Model
 {
-	function get_admin($email,$password) {
+	function get_admin($email) {
 		$where = array(
 			'email' => $email,
-			'password' => $password,
 		);
 		$this->db->where($where);
 		$query = $this->db->get('admin')->result();

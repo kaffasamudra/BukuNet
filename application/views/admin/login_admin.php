@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="icon" href="<?= base_url("assets/img/logo.png") ?>" type="image/png">
+    <link rel="icon" href="<?= base_url("assets/img/logo perpus.png") ?>" type="image/png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login user</title>
@@ -87,7 +87,7 @@
         <?php echo form_open('adminlogin'); ?>
             <div class="illustration">
                 <!-- Gunakan <img> untuk menampilkan gambar -->
-                <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
+                <img src="<?= base_url('assets/img/logo perpus.png'); ?>" alt="Login Illustration" style="width:100px;height:auto;"> 
             </div>
             <div class="form-group">
                 <input class="form-control" type="text" name="email" id="email" placeholder="email" required>
@@ -96,7 +96,6 @@
                 <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <input class="btn btn-primary btn-block" type="submit" value="Login">
-            <a href="<?= base_url('forgotpassword') ?>" class="forgot">Forgot your password?</a>
             <?php if ($this->session->flashdata('error')): ?>
                 <p class="forgot"><?php echo $this->session->flashdata('error'); ?></p>
             <?php endif; ?>

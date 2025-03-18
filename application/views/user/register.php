@@ -90,30 +90,40 @@
             <p style="color: red; font-size: 90%;"> <?php echo $this->session->flashdata('error'); ?> </p>
         <?php endif; ?>
 
-        <?php echo validation_errors(); ?>
 
-        <form method="post" action="<?php echo site_url('register'); ?>">
+        <form method="post" action="<?php echo site_url('register'); ?>" enctype="multipart/form-data">
             <div class="illustration">
                 <img src="<?= base_url('assets/img/logo perpus.png'); ?>" alt="Login Illustration" style="width:90px;height:auto;"> 
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="nama" placeholder="Nama" value="<?php echo set_value('nama'); ?>">
+              <input class="form-control" type="text" name="nama" placeholder="Nama" value="<?php echo set_value('nama'); ?>" required>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
+              <input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>" required>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="text" name="alamat" placeholder='Alamat'>
+              <input class="form-control" type="text" name="alamat" placeholder='Alamat' required>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="password" name="password" placeholder="Password">
+              <input class="form-control" type="text" name="phone" placeholder='Nomor Telephone' required>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
+              <input class="form-control" type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="mb-3">
+                <div class="border p-2 text-center" id="file-upload-area" style="cursor: pointer;">
+                    <span id="file-name" class="text-muted"  required>Upload avatar Profil</span>
+                </div>
+                <input type="file" id="avatar" name="avatar" accept="image/*" required hidden>
             </div>
 
             <button class="btn btn-primary btn-block" type="submit">Register</button>
@@ -121,5 +131,17 @@
             <a href="<?= base_url('loginuser') ?>" class="forgot">Sudah punya akun? Login</a>
         </form>
     </div>
+
+    <script>
+        document.getElementById("file-upload-area").addEventListener("click", function() {
+            document.getElementById("avatar").click(); // Klik input file saat area diklik
+        });
+
+        document.getElementById("avatar").addEventListener("change", function() {
+            var fileName = this.files[0] ? this.files[0].name : "Klik di sini untuk memilih file";
+            document.getElementById("file-name").textContent = fileName; // Ubah teks setelah memilih file
+        });
+    </script>
+
 </body>
 </html>

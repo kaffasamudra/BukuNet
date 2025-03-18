@@ -43,3 +43,4 @@ $route['databuku'] = 'admin/Buku/petugas';
 $route['databukuu'] = 'admin/Buku/admin';
 
 $route['datapeminjamen'] = 'admin/data_peminjaman/petugas';
+$route['logout'] = 'admin/admin/logout';
