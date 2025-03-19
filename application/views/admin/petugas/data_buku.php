@@ -2,14 +2,20 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    <link rel="icon" href="https://freeiconshop.com/wp-content/uploads/edd/list-flat.png" type="image/png">
+    <link rel="icon" href="#" type="image/png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url("assets/bootstrap/") ?>css/style.css">
+    <link rel="stylesheet" href="<?= base_url("assets/") ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
+    <style>
+        .modal {
+            z-index: 1060 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -81,10 +87,45 @@
             <main class="content px-3 py-2">
                 <div class="container-fluid">
                     <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title text-center">
-                                Basic Table
-                            </h5>
+                        <div class="container">
+                            <h3 class="text-center mb-4">Tambah Buku</h3>
+                            <form action="<?= base_url('admin/buku/tambah') ?>" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Judul</label>
+                                            <input type="text" class="form-control" name="judul" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Kategori</label>
+                                            <input type="text" class="form-control" name="kategori" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Penulis</label>
+                                            <input type="text" class="form-control" name="penulis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Gambar</label>
+                                            <input type="file" class="form-control" name="gambar" accept="image/*">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Penerbit</label>
+                                            <input type="text" class="form-control" name="penerbit" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Tahun Terbit</label>
+                                            <input type="number" class="form-control" name="tahun_terbit" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Jumlah</label>
+                                            <input type="number" class="form-control" name="jumlah" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 mt-4">Simpan</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         <div class="card-body">
                             <div id="flash-message" data-message="<?= $this->session->flashdata('message') ?>"></div>
@@ -96,6 +137,7 @@
                                         <th scope="col">Penulis</th>
                                         <th scope="col">Penerbit</th>
                                         <th scope="col">Tahun Terbit</th>
+                                        <th scope="col">Jumlah</th>
                                         <th scope="col">aksi</th>
                                     </tr>
                                 </thead>
@@ -109,9 +151,10 @@
                                         <td><?= $b->penulis; ?></td>
                                         <td><?= $b->penerbit; ?></td>
                                         <td><?= $b->tahun_terbit; ?></td>
+                                        <td><?= $b->jumlah; ?></td>
                                         <td>
-                                            <a href="<?= base_url('buku/edit/'.$b->id); ?>" class="btn btn-warning btn-sm">Edit</a>
-                                            <a href="<?= base_url('buku/hapus/'.$b->id); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                                            <a class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editBuku<?= $b->id ?>">Edit</a>
+                                            <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
@@ -120,6 +163,58 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal -->
+                <?php foreach($buku as $b): ?>
+                <div class="modal fade" id="editBuku<?= $b->id ?>" tabindex="-1" aria-labelledby="editTiketLabel<?= $b->id ?>" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editBuku<?= $b->id ?>">Edit Buku</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="<?= site_url('admin/buku/update/'.$b->id) ?>" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Judul</label>
+                                                <input type="text" class="form-control" name="judul" value="<?= $b->judul ?>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Kategori</label>
+                                                <input type="text" class="form-control" name="kategori" value="<?= $b->kategori ?>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Penulis</label>
+                                                <input type="text" class="form-control" name="penulis" value="<?= $b->penulis ?>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Gambar</label>
+                                                <input type="file" class="form-control" name="gambar" value="<?= $b->gambar ?>" accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Penerbit</label>
+                                                <input type="text" class="form-control" name="penerbit" value="<?= $b->penerbit ?>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tahun Terbit</label>
+                                                <input type="number" class="form-control" name="tahun_terbit" value="<?= $b->tahun_terbit ?>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Jumlah</label>
+                                                <input type="number" class="form-control" name="jumlah" value="<?= $b->jumlah ?>" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100 mt-4">Simpan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </main>
             <a href="#" class="theme-toggle">
                 <i class="fa-regular fa-moon"></i>
@@ -140,7 +235,7 @@
             </footer>
         </div>
     </div>
-    
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>

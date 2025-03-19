@@ -96,6 +96,7 @@
                                         <th scope="col">Penulis</th>
                                         <th scope="col">Penerbit</th>
                                         <th scope="col">Tahun Terbit</th>
+                                        <th scope="col">Jumlah</th>
                                         <th scope="col">aksi</th>
                                     </tr>
                                 </thead>
@@ -109,6 +110,7 @@
                                         <td><?= $b->penulis; ?></td>
                                         <td><?= $b->penerbit; ?></td>
                                         <td><?= $b->tahun_terbit; ?></td>
+                                        <td><?= $b->jumlah; ?></td>
                                         <td>
                                             <a href="<?= base_url('buku/edit/'.$b->id); ?>" class="btn btn-warning btn-sm">Edit</a>
                                             <a href="<?= base_url('buku/hapus/'.$b->id); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>

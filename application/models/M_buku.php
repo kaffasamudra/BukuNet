@@ -11,12 +11,17 @@ class M_buku extends CI_Model
         return $this->db->insert('buku');
     }
 
-    public function get_buku_id($id) {
-        return $this->db->get_where('buku', ['id' => $id])->row();
-    }
-
     public function count_buku() {
         return $this->db->count_all('buku');
+    }
+
+    public function insert($data) {
+        return $this->db->insert('buku', $data);
+    }
+
+    public function update($id, $data) {
+        $this->db->where('id', $id);
+        return $this->db->update('buku', $data);
     }
 
     public function cek_jumlah_buku($id_buku) {
@@ -27,9 +32,9 @@ class M_buku extends CI_Model
         $result = $query->row();
 
         if (!$result) {
-            return false; // Buku tidak ditemukan
+            return false;
         }
 
-        return ($result->jumlah > 0); // True jika jumlah tersedia, False jika habis
+        return ($result->jumlah > 0);
     }
 }

@@ -23,4 +23,34 @@ class Buku extends CI_controller
 		$data['buku'] = $this->M_buku->get_buku();
 		$this->load->view('admin/data_buku', $data);
 	}
+
+    public function tambah() {
+        if ($this->input->post()) {
+            $data = [
+                'judul' => $this->input->post('judul'),
+                'penulis' => $this->input->post('penulis'),
+                'penerbit' => $this->input->post('penerbit'),
+                'tahun_terbit' => $this->input->post('tahun_terbit'),
+                'kategori' => $this->input->post('kategori'),
+                'jumlah' => $this->input->post('jumlah'),
+            ];
+            $this->M_buku->insert($data);
+            redirect('buku');
+        } else {
+            $this->load->view('buku/tambah');
+        }
+    }
+
+    public function update($id) {
+        $data = [
+            'judul' => $this->input->post('judul'),
+            'penulis' => $this->input->post('penulis'),
+            'penerbit' => $this->input->post('penerbit'),
+            'tahun_terbit' => $this->input->post('tahun_terbit'),
+            'kategori' => $this->input->post('kategori'),
+            'jumlah' => $this->input->post('jumlah'),
+        ];
+        $this->M_buku->update($id, $data);
+        redirect('databuku');
+    }
 }
