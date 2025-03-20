@@ -24,6 +24,17 @@ class M_buku extends CI_Model
         return $this->db->update('buku', $data);
     }
 
+    public function update_status($id, $status) {
+        $this->db->where('id', $id);
+        return $this->db->update('buku', ['status' => $status]);
+    }
+
+    // Fungsi untuk mendapatkan buku yang statusnya "on"
+    public function get_buku_aktif() {
+        $this->db->where('status', 'on');
+        return $this->db->get('buku')->result();
+    }
+
     public function cek_jumlah_buku($id_buku) {
         $this->db->select('jumlah');
         $this->db->from('buku');

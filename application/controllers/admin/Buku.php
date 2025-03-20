@@ -53,4 +53,18 @@ class Buku extends CI_controller
         $this->M_buku->update($id, $data);
         redirect('databuku');
     }
+
+    public function toggle_status($id) {
+        $buku = $this->db->get_where('buku', ['id' => $id])->row();
+        if ($buku) {
+            $status_baru = ($buku->status == 'on') ? 'off' : 'on'; // Ubah status
+            $this->M_buku->update_status($id, $status_baru);
+
+            // Kirim response JSON untuk AJAX
+            echo json_encode(['status' => $status_baru]);
+        }
+    }
+
+    // Fungsi untuk user agar hanya melihat buku yang aktif
+    
 }

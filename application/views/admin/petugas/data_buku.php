@@ -153,6 +153,7 @@
                                         <td><?= $b->tahun_terbit; ?></td>
                                         <td><?= $b->jumlah; ?></td>
                                         <td>
+                                            <a class="btn toggle-status btn-sm <?= ($b->status == 'on') ? 'btn-light' : 'btn-secondary'; ?>" data-id="<?= $b->id; ?>"><?= ($b->status == 'on') ? 'ON' : 'OFF'; ?></a>
                                             <a class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editBuku<?= $b->id ?>">Edit</a>
                                             <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                                         </td>
@@ -265,6 +266,28 @@
             }
         }
     });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $(".toggle-status").click(function() {
+                var button = $(this);
+                var id = button.data("id");
+
+                $.ajax({
+                    url: "<?= base_url('admin/buku/toggle_status/'); ?>" + id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.status === 'on') {
+                            button.removeClass("btn-secondary").addClass("btn-light").text("ON");
+                        } else {
+                            button.removeClass("btn-light").addClass("btn-secondary").text("OFF");
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

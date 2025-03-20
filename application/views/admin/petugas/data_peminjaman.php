@@ -114,7 +114,7 @@
                                             <div><?= $b->buku ?></div>
                                         </td>
                                         <td>
-                                            <div class="text-gray"><small><?= $b->tanggal_pinjam ?><small></div>
+                                            <div class="text-gray"><small><?= date('Y-m-d', strtotime($b->tanggal_pinjam)) ?><small></div>
                                         </td>
                                         <td>
                                             <div class="text-gray"><small><?= $b->tanggal_kembali ?><small></div>
@@ -230,13 +230,61 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js"></script>
 	<script type="text/javascript">
-		new DataTable('#myTable', {
-	    layout: {
-	        topStart: {
-	            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-	        }
-	    }
-	});
+		$(document).ready(function () {
+        var table = $('#myTable').DataTable({
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+
+        // Tambahkan elemen input untuk filter tanggal
+        $("#myTable_wrapper").prepend(
+            '<div class="row mb-3">' +
+            '    <div class="col-md-3">' +
+            '        <label for="startDate">Tanggal Awal:</label>' +
+            '        <input type="date" id="startDate" class="form-control">' +
+            '    </div>' +
+            '    <div class="col-md-3">' +
+            '        <label for="endDate">Tanggal Akhir:</label>' +
+            '        <input type="date" id="endDate" class="form-control">' +
+            '    </div>' +
+            '    <div class="col-md-3">' +
+            '        <button id="filterBtn" class="btn btn-primary mt-4">Filter</button>' +
+            '    </div>' +
+            '</div>'
+        );
+
+        // Filter Tanggal
+        $('#filterBtn').click(function () {
+            var startDate = $('#startDate').val();
+            var endDate = $('#endDate').val();
+
+            if (startDate && endDate) {
+                table.draw();
+            } else {
+                alert('Pilih rentang tanggal terlebih dahulu!');
+            }
+        });
+
+        $.fn.dataTable.ext.search.push(
+            function (settings, data, dataIndex) {
+                var min = $('#startDate').val();
+                var max = $('#endDate').val();
+                var date = data[3] || ''; // Kolom tanggal pinjam
+
+                if (!min || !max) {
+                    return true;
+                }
+
+                if (date >= min && date <= max) {
+                    return true;
+                }
+                return false;
+            }
+        );
+    });
 	</script>
 </body>
 

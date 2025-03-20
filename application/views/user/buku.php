@@ -178,7 +178,7 @@
                                 </p> -->
                             </div>
                             <div class="modal-footer">
-                                <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>\
+                                <a href="<?= base_url('user/peminjaman/form/' . $b->id) ?>" class="btn btn-primary">Pinjam</a>
                                 <!-- Tombol Simpan / Hapus Koleksi -->
                                 <button class="toggle-koleksi" data-id="<?= $b->id ?>">
                                     <i class="fa <?= $isInKoleksi ? 'bi-bookmark-fill' : 'bi-bookmark'; ?>"></i>
