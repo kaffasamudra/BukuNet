@@ -11,6 +11,10 @@ class M_buku extends CI_Model
         return $this->db->insert('buku');
     }
 
+    public function get_buku_id($id) {
+        return $this->db->get_where('buku', ['id' => $id])->row();
+    }
+
     public function count_buku() {
         return $this->db->count_all('buku');
     }

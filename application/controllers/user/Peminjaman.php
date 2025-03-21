@@ -53,12 +53,12 @@ class Peminjaman extends CI_Controller {
 
     public function simpan() {
         if (!$this->session->userdata('id')) {
-            redirect('loginuser'); // Redirect jika belum login
+            redirect('loginuser');
         }
 
         $data = [
             'id_user' => $this->session->userdata('id'),
-            'id_petugas' => 1, // Sesuaikan dengan admin/petugas
+            'id_petugas' => 1,
             'buku' => $this->input->post('judul'),
             'tanggal_pinjam' => date('Y-m-d H:i:s'),
             'tanggal_kembali' => date('Y-m-d', strtotime("+7 days")),

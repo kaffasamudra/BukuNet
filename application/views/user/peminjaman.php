@@ -119,7 +119,7 @@
                             <input type="text" value="<?= date('Y-m-d') ?>" readonly><br>
 
                             <label>Tanggal Kembali:</label>
-                            <input type="text" value="<?= date('Y-m-d', strtotime("+7 days")) ?>" readonly><br>
+                            <input type="text" value="<?= date('Y-m-d', strtotime("+7 days")) ?>" ><br>
 
                             <button type="submit">Pinjam</button>
                         </form>
