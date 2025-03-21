@@ -162,7 +162,7 @@
                             <div class="modal-header">
                                 <h1>Kemballikan Buku</h1>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <form action="<?= base_url("editform/").$b->id?>" method="post"> 
+                                <form action="<?= base_url("editform/").$b->id?>" method="post" style="display: none;">> 
                                     <?php  
                                         $tgl1=new DateTime(date("Y-m-d"));
                                         $tgl2=new DateTime($b->tanggal_kembali);
@@ -176,13 +176,13 @@
                                             echo 0;
                                         }
                                     ?>
-                                    <input type="" name="denda" value="<?= $selisih_hari ?>">
-                                    <span aria-hidden="true">&times;</span>
+                                </form>
+                                <input type="hidden" name="denda" value="<?= $selisih_hari ?>">
+                                <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                    <button type="submit" class="btn btn-primary btn-sm">Kembalikan</button>
-                                </form>
+                                <button type="submit" class="btn btn-primary btn-sm">Kembalikan</button>
                             </div>
                         </div>
                     </div>
